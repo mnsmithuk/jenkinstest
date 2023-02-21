@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('Checkout Code') {
             steps {
-                echo 'Hello World'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/mnsmithuk/jenkinstest.git']])
             }
         }
     }
